@@ -22,7 +22,7 @@ sbsigntools
 edk2-shell # useful EFI shell in case things go wrong
 
 # Networking
-iwd
+networkmanager
 iptables-nft # includes nftables as a dependency, will automatically uninstall iptables
 firefox
 wget
@@ -38,7 +38,6 @@ polkit
 keepassxc
 
 # Backup
-restic
 syncthing
 
 # Virtualization/Containerization
@@ -50,34 +49,16 @@ virt-manager
 # Monitoring
 audit # Log system failures and important security events
 fwupd # Hardware firmware updates manager
-dunst # Notification daemon
 htop
 iotop
 lsof
-nvtop # htop equivalent for GPUs
 
 # Desktop environment
-sway
-swaylock
-swayidle
-swaybg
-kanshi # Monitors management
-xdg-desktop-portal-wlr # Enable screen sharing capabilites
-xdg-desktop-portal-gtk # File chooser and others
-flameshot # Take screenshots
-grim # flameshot dependency for Wayland
-wezterm # Terminal emulator
+plasma-meta
 wl-clipboard
-bemenu-wayland
-python-i3ipc # Interact with Sway using Python
-python-psutil # status-bar requirement
 libnotify # notify-send
 qt5-wayland
 qt6-wayland
-slurp # Select monitor region
-brightnessctl # Control monitor brightness
-gammastep # decrease blue light during the night
-playerctl # control various media players
 
 # Basic services
 pipewire
@@ -102,9 +83,6 @@ papirus-icon-theme
 neovim
 git
 lazygit
-rustup
-rust-analyzer
-clang
 ipython
 python-pip
 man-db
@@ -113,18 +91,15 @@ npm # for nvim plugins
 
 # Debugging
 gdb
-pwndbg
 strace
 
 # File viewers/editors
 zathura
 zathura-pdf-poppler
-swayimg
 mpv
 gimp
 imagemagick
 tree
-fzf
 
 # CLI
 zsh
