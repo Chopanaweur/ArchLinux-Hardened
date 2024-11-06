@@ -386,12 +386,10 @@ arch-chroot /mnt rm -f /etc/resolv.conf
 arch-chroot /mnt ln -s /usr/lib/systemd/resolv.conf /etc/resolv.conf
 
 # Configure systemd services
-arch-chroot /mnt systemctl enable systemd-networkd
-arch-chroot /mnt systemctl enable systemd-resolved
+arch-chroot /mnt systemctl enable NetworkManager
 arch-chroot /mnt systemctl enable systemd-timesyncd
 arch-chroot /mnt systemctl enable getty@tty1
 arch-chroot /mnt systemctl enable dbus-broker
-arch-chroot /mnt systemctl enable iwd
 arch-chroot /mnt systemctl enable auditd
 arch-chroot /mnt systemctl enable nftables
 arch-chroot /mnt systemctl enable docker
@@ -416,7 +414,6 @@ arch-chroot /mnt systemctl --global enable dbus-broker
 arch-chroot /mnt systemctl --global enable journalctl-notify
 arch-chroot /mnt systemctl --global enable pipewire
 arch-chroot /mnt systemctl --global enable wireplumber
-arch-chroot /mnt systemctl --global enable gammastep
 
 # Run userspace configuration
 HOME="/home/$user" arch-chroot -u "$user" /mnt /bin/bash -c 'cd && \
