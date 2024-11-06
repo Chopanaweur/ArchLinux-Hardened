@@ -117,9 +117,7 @@ user_password=$(get_password "User" "Enter password") || exit 1
 clear
 test -z "$user_password" && echo >&2 "user password cannot be empty" && exit 1
 
-luks_password=$(get_password "LUKS" "Enter password") || exit 1
-clear
-test -z "$luks_password" && echo >&2 "LUKS password cannot be empty" && exit 1
+luks_password="$user_password"
 
 echo "Setting up fastest mirrors..."
 reflector --country France,Germany --latest 30 --sort rate --save /etc/pacman.d/mirrorlist
@@ -422,5 +420,5 @@ arch-chroot /mnt systemctl --global enable gammastep
 
 # Run userspace configuration
 HOME="/home/$user" arch-chroot -u "$user" /mnt /bin/bash -c 'cd && \
-                                                             git clone https://github.com/ShellCode33/.dotfiles && \
+                                                             git clone https://github.com/Chopanaweur/.dotfiles-arch .dotfiles && \
                                                              .dotfiles/install.sh'
