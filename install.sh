@@ -347,7 +347,7 @@ sed -i '$ d' /mnt/etc/sudoers
 #          eye candy, so I made my choice :)
 #
 # You can choose your own theme from there: https://github.com/adi1090x/plymouth-themes
-arch-chroot /mnt plymouth-set-default-theme colorful_loop
+arch-chroot /mnt plymouth-set-default-theme glowing
 
 if [[ "$gpu_target" = "AMD" ]]; then
   modules="amdgpu"
@@ -380,10 +380,6 @@ arch-chroot /mnt passwd -dl root
 # Setup firejail
 arch-chroot /mnt /usr/bin/firecfg
 echo "$user" >/mnt/etc/firejail/firejail.users
-
-# Setup DNS
-arch-chroot /mnt rm -f /etc/resolv.conf
-arch-chroot /mnt ln -s /usr/lib/systemd/resolv.conf /etc/resolv.conf
 
 # Configure systemd services
 arch-chroot /mnt systemctl enable NetworkManager
